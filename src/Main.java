@@ -8,7 +8,7 @@ public class Main {
         boolean esPremium;
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("--- Plataforma streaming ---");
+        System.out.println("---- Plataforma streaming ----");
         System.out.println("Ingresa tu nombre: ");
         nombreUsuario=scanner.nextLine();
         System.out.println("Ingrese tu edad: ");
