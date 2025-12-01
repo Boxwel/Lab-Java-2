@@ -1,15 +1,35 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String nombreUsuario;
+        int edad;
+        double saldoCuenta;
+        boolean esPremium;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--- Plataforma streaming ---");
+        System.out.println("Ingresa tu nombre: ");
+        nombreUsuario=scanner.nextLine();
+        System.out.println("Ingrese tu edad: ");
+        edad=scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Ingresar saldo: ");
+        saldoCuenta=scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Eres usuario premium?");
+        esPremium=scanner.nextBoolean();
+
+        boolean accesoExclusivo = (edad >= 18) && esPremium == true;
+        boolean calificaPromocion = (saldoCuenta > 1000) || (edad < 25);
+        boolean perfilIncompleto = (saldoCuenta == 0) || !nombreUsuario.equals("invitado");
+        boolean perfilActivoTotal = !perfilIncompleto && accesoExclusivo || calificaPromocion;
+
+        System.out.println("--- Perfil --- ");
+        System.out.println("Acceso exclusivo: " + accesoExclusivo);
+        System.out.println("Promociones disponibles: " + calificaPromocion);
+        System.out.println("Perfil completo: " + perfilIncompleto);
+        System.out.println("Perfil activo: " + perfilActivoTotal);
+
     }
 }
