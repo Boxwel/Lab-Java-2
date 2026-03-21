@@ -25,7 +25,7 @@ public class Main {
         boolean perfilIncompleto = (saldoCuenta == 0) || !nombreUsuario.equals("invitado");
         boolean perfilActivoTotal = !perfilIncompleto && accesoExclusivo || calificaPromocion;
 
-        System.out.println("--- Perfil --- ");
+        System.out.println("---- Perfil ---- ");
         System.out.println("Acceso exclusivo: " + accesoExclusivo);
         System.out.println("Promociones disponibles: " + calificaPromocion);
         System.out.println("Perfil completo: " + perfilIncompleto);
